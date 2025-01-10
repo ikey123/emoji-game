@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Game&Quiz, emoji kitchen, christmas emoji game,guess the emoji</title>
+    <meta name="description" content="Play fun emoji games and quizzes! Guess movies, songs, and more using emoji clues. Enjoy Christmas games, movie quizzes, and emoji kitchen challenges.">
+    <meta name="keywords" content="emoji game, emoji quiz, christmas emoji game, movie emoji quiz, emoji kitchen, guess the emoji">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="./index.html" class="logo">🎮 Emoji Gamer</a>
+            <ul class="menu">
+                <li><a href="/games/">🎮 Games</a></li>
+                <li><a href="/categories/">🎯 Categories</a></li>
+                <li><a href="/resources/">📚 Resources</a></li>
+                <li><a href="/about/">📱 About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Play Fun Emoji Games</h1>
+        <p>Discover our collection of emoji puzzles, quizzes, and party games!</p>
+    </section>
+
+    <section class="featured-games">
+        <div class="game-area" id="gameArea">
+            <div class="game-card" onclick="startGame('christmas')">
+                <div class="game-content">
+                    <h3 class="game-title">🎄 Christmas Emoji Game</h3>
+                    <p class="game-desc">Guess the Christmas movies and songs using only emojis!</p>
+                </div>
+            </div>
+            
+            <div class="game-card" onclick="startGame('movie')">
+                <div class="game-content">
+                    <h3 class="game-title">🎬 Movie Emoji Quiz</h3>
+                    <p class="game-desc">Can you decode these famous movies from emoji clues?</p>
+                </div>
+            </div>
+            
+            <div class="game-card" onclick="startGame('kitchen')">
+                <div class="game-content">
+                    <h3 class="game-title">🎨 Emoji Kitchen</h3>
+                    <p class="game-desc">Mix and match emojis to create fun combinations!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Popular Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="navigateToCategory('christmas')">
+                <h3>🎄 Christmas Games</h3>
+                <p>9,280 monthly players</p>
+            </div>
+            
+            <div class="category-card" onclick="navigateToCategory('movie')">
+                <h3>🎬 Movie Games</h3>
+                <p>4,950 monthly players</p>
+            </div>
+            
+            <div class="category-card" onclick="navigateToCategory('quiz')">
+                <h3>❓ Quiz Games</h3>
+                <p>50,000 monthly players</p>
+            </div>
+            
+            <div class="category-card" onclick="navigateToCategory('party')">
+                <h3>🎉 Party Games</h3>
+                <p>1,300 monthly players</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="game-modal" id="gameModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeGame()">×</span>
+            <div class="game-interface">
+                <h2 id="gameTitle"></h2>
+                <div class="emoji-display" id="emojiDisplay"></div>
+                <input type="text" class="answer-input" id="answerInput" placeholder="Type your answer...">
+                <button class="submit-answer" onclick="checkAnswer()">Submit Answer</button>
+                <div class="score-display" id="scoreDisplay"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
