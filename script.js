@@ -223,7 +223,10 @@ function navigateToCategory(category) {
             <div class="game-interface">
                 <div class="game-header">
                     <h2>${categories[category].title}</h2>
-                    <button class="back-button" onclick="restoreCategories('${category}')">Back</button>
+                    <div class="navigation-buttons">
+                        <button class="back-button" onclick="backToHome()">Home</button>
+                        <button class="back-button" onclick="restoreCategories('${category}')">Back</button>
+                    </div>
                 </div>
                 <div class="category-games-grid">
                     ${getCategoryGames(category)}
@@ -240,6 +243,26 @@ function navigateToCategory(category) {
         originalContent,
         currentCategory: category
     };
+
+    // 平滑滚动到游戏区域
+    gameArea.scrollIntoView({ behavior: 'smooth' });
+}
+
+// 添加返回首页函数
+function backToHome() {
+    if (window.categoryState) {
+        const gameArea = document.getElementById('gameArea');
+        const categoriesSection = document.querySelector('.categories');
+        
+        gameArea.innerHTML = window.categoryState.originalContent.gameArea;
+        categoriesSection.innerHTML = window.categoryState.originalContent.categories;
+        categoriesSection.style.display = 'block';
+        
+        window.categoryState = null;
+
+        // 平滑滚动到顶部
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
 // 添加辅助函数
@@ -259,7 +282,10 @@ function playPuzzle(category, emoji, answer) {
         <div class="game-interface">
             <div class="game-header">
                 <h2>${categories[category].title}</h2>
-                <button class="back-button" onclick="backToCategory('${category}')">Back to Games</button>
+                <div class="navigation-buttons">
+                    <button class="back-button" onclick="backToHome()">Home</button>
+                    <button class="back-button" onclick="backToCategory('${category}')">Back</button>
+                </div>
             </div>
             <div class="emoji-display">${emoji}</div>
             <div class="game-controls">
@@ -270,6 +296,9 @@ function playPuzzle(category, emoji, answer) {
         </div>
     `;
     document.getElementById('answerInput').focus();
+    
+    // 平滑滚动到游戏区域
+    gameArea.scrollIntoView({ behavior: 'smooth' });
 }
 
 function checkCategoryAnswer(correctAnswer) {

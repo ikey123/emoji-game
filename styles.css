@@ -115,16 +115,17 @@ body {
 }
 
 .categories {
-  background: var(--light);
+  background: white;
   padding: 4rem 2rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .categories h2 {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--dark);
+  text-shadow: none;
 }
 
 .category-grid {
@@ -137,27 +138,30 @@ body {
 }
 
 .category-card {
-  background: white;
+  background: var(--light);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
-  transition: transform 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .category-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .category-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--dark);
 }
 
 .category-card p {
-  color: #666;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .game-modal {
@@ -523,4 +527,61 @@ section h2 {
     .article-card {
         padding: 1.5rem;
     }
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.game-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 1rem;
+    z-index: 100;
+    border-bottom: 1px solid var(--light);
+}
+
+.game-interface {
+    position: relative;
+}
+
+/* 修改返回按钮样式 */
+.back-button {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* 确保游戏区域有足够的上边距 */
+.category-games {
+    padding-top: 1rem;
+}
+
+/* 优化移动端显示 */
+@media (max-width: 768px) {
+    .navigation-buttons {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .back-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }

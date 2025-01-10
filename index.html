@@ -20,10 +20,10 @@
         <nav class="nav">
             <a href="./index.html" class="logo">🎮 Emoji Gamer</a>
             <ul class="menu">
-                <li><a href="/games/">🎮 Games</a></li>
-                <li><a href="/categories/">🎯 Categories</a></li>
-                <li><a href="/resources/">📚 Resources</a></li>
-                <li><a href="/about/">📱 About</a></li>
+                <li><a href="./index.html#featured-games">🎮 Games</a></li>
+                <li><a href="./index.html#categories">🎯 Categories</a></li>
+                <li><a href="./index.html">📚 Resources</a></li>
+                <li><a href="./index.html">📱 About</a></li>
             </ul>
         </nav>
     </header>
@@ -33,7 +33,7 @@
         <p>Discover our collection of emoji puzzles, quizzes, and party games!</p>
     </section>
 
-    <section class="featured-games">
+    <section class="featured-games" id="featured-games">
         <div class="game-area" id="gameArea">
             <div class="game-card" onclick="startGame('christmas')">
                 <div class="game-content">
@@ -54,6 +54,31 @@
                     <h3 class="game-title">🎨 Emoji Kitchen</h3>
                     <p class="game-desc">Mix and match emojis to create fun combinations!</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories" id="categories">
+        <h2>Popular Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="navigateToCategory('christmas')">
+                <h3>🎄 Christmas Games</h3>
+                <p>9,280 monthly players</p>
+            </div>
+            
+            <div class="category-card" onclick="navigateToCategory('movie')">
+                <h3>🎬 Movie Games</h3>
+                <p>4,950 monthly players</p>
+            </div>
+            
+            <div class="category-card" onclick="navigateToCategory('quiz')">
+                <h3>❓ Quiz Games</h3>
+                <p>50,000 monthly players</p>
+            </div>
+            
+            <div class="category-card" onclick="navigateToCategory('party')">
+                <h3>🎉 Party Games</h3>
+                <p>1,300 monthly players</p>
             </div>
         </div>
     </section>
@@ -151,43 +176,18 @@
                 <article class="article-card">
                     <h3>Top 10 Strategies for Emoji Puzzle Games</h3>
                     <p>Master the art of solving emoji puzzles with our expert tips and tricks. Learn how to think creatively and boost your score!</p>
-                    <a href="/guides/emoji-puzzle-strategies/" class="read-more">Read More →</a>
+                    <a href="./index.html" class="read-more">Read More →</a>
                 </article>
                 <article class="article-card">
                     <h3>Best Christmas Emoji Games for Family Fun</h3>
                     <p>Discover the most entertaining Christmas-themed emoji games perfect for family gatherings and holiday parties.</p>
-                    <a href="/guides/christmas-emoji-games/" class="read-more">Read More →</a>
+                    <a href="./index.html" class="read-more">Read More →</a>
                 </article>
                 <article class="article-card">
                     <h3>Movie Emoji Quiz: Ultimate Challenge</h3>
                     <p>Put your movie knowledge to the test with our comprehensive guide to solving movie emoji puzzles.</p>
-                    <a href="/guides/movie-emoji-quiz/" class="read-more">Read More →</a>
+                    <a href="./index.html" class="read-more">Read More →</a>
                 </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="categories">
-        <h2>Popular Categories</h2>
-        <div class="category-grid">
-            <div class="category-card" onclick="navigateToCategory('christmas')">
-                <h3>🎄 Christmas Games</h3>
-                <p>9,280 monthly players</p>
-            </div>
-            
-            <div class="category-card" onclick="navigateToCategory('movie')">
-                <h3>🎬 Movie Games</h3>
-                <p>4,950 monthly players</p>
-            </div>
-            
-            <div class="category-card" onclick="navigateToCategory('quiz')">
-                <h3>❓ Quiz Games</h3>
-                <p>50,000 monthly players</p>
-            </div>
-            
-            <div class="category-card" onclick="navigateToCategory('party')">
-                <h3>🎉 Party Games</h3>
-                <p>1,300 monthly players</p>
             </div>
         </div>
     </section>
